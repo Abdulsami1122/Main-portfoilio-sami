@@ -14,7 +14,12 @@ const workData = [
     client: "Responsive UI/UX and business-focused design",
     slug: "https://gultraders.com/",
   },
-
+  {
+    image: "/images/work/visa.png",
+    title: "Visa Consulting Website (MERN)",
+    client: "Global visa assistance, documentation, and user-friendly portal",
+    slug: "#",
+  },
 ];
 
 export const GET = async () => {
