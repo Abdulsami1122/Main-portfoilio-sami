@@ -7,7 +7,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Shah Taimoor Bin Khalid — Full-Stack Developer",
+  title: "Abdul Sami — Full-Stack Developer",
   description:
     "Full-Stack Developer — MERN & PERN stack, POS systems, and production deployments.",
   icons: {

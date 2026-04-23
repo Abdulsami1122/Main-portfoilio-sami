@@ -19,7 +19,7 @@ const Footer = () => {
               href={"/"}
               className="hover:text-black font-semibold"
             >
-              Shah Taimoor Bin Khalid
+              Abdul Sami
             </Link>{" "}
             - All rights reserved.
           </p>

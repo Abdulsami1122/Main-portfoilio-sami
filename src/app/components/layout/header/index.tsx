@@ -9,7 +9,7 @@ const Header = () => {
   const { t, language } = useLanguage();
 
   const handleDownloadPDF = () => {
-    window.location.href = "/images/resumedownload/TaimoorCv.pdf";
+    window.location.href = "/images/resumedownload/Abul Sami CV1.pdf";
   };
   return (
     <header className="navbar top-0 left-0 z-[999] w-full absolute">

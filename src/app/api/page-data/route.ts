@@ -4,15 +4,15 @@ const contactBar = {
   contactItems: [
     {
       type: "email",
-      label: "taimour448@gmail.com",
+      label: "samij7141@gmail.com",
       icon: "/images/icon/mail-icon.svg",
-      link: "mailto:taimour448@gmail.com",
+      link: "mailto:samij7141@gmail.com",
     },
     {
       type: "phone",
-      label: "0313 0922988",
+      label: "03065779097",
       icon: "/images/icon/call-icon.svg",
-      link: "tel:+923130922988",
+      link: "tel:+923065779097",
     },
     {
       type: "website",
@@ -25,12 +25,12 @@ const contactBar = {
     {
       platform: "github",
       icon: "/images/icon/github-icon.svg",
-      link: "https://github.com/ShahTaimoor",
+      link: "https://github.com/Abdulsami1122",
     },
     {
       platform: "linkedin",
       icon: "/images/icon/linkedin-icon.svg",
-      link: "https://www.linkedin.com/in/shah-taimoor-bin-khalid-b86191268/",
+      link: "https://www.linkedin.com/in/abdulsami1122",
     },
   ],
 };
@@ -84,23 +84,23 @@ const contactLinks = {
   socialLinks: [
     {
       title: "GitHub",
-      href: "https://github.com/ShahTaimoor",
+      href: "https://github.com/Abdulsami1122",
     },
     {
       title: "LinkedIn",
-      href: "https://www.linkedin.com/in/shah-taimoor-bin-khalid-b86191268/",
+      href: "https://www.linkedin.com/in/abdulsami1122",
     },
   ],
   contactInfo: [
     {
       type: "email",
-      label: "taimour448@gmail.com",
-      link: "mailto:taimour448@gmail.com",
+      label: "samij7141@gmail.com",
+      link: "mailto:samij7141@gmail.com",
     },
     {
       type: "phone",
-      label: "0313 0922988",
-      link: "tel:+923130922988",
+      label: "03065779097",
+      link: "tel:+923065779097",
     },
   ],
 };

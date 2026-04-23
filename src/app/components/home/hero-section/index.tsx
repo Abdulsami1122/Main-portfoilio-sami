@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="lg:flex lg:justify-between grid grid-cols-1 sm:grid-cols-2 gap-7 md:gap-4 items-center">
           <div className="flex flex-col gap-4 md:gap-7 max-w-2xl">
             <div>
-              <h1>Shah Taimoor Bin Khalid</h1>
+              <h1>Abdul Sami</h1>
               <h1>{t("hero.role")}</h1>
             </div>
             <p className="text-muted-foreground font-normal max-w-md xl:max-w-xl">
@@ -33,8 +33,8 @@ const HeroSection = () => {
               {/* Profile Image container */}
               <div className="relative h-[270px] w-[270px] sm:h-[340px] sm:w-[340px] lg:h-[420px] lg:w-[420px] overflow-hidden shadow-2xl rounded-full border-4 border-white dark:border-gray-900 bg-muted/20">
                 <Image
-                  src={"/images/home/banner/Taimoor.jpg"}
-                  alt="Shah Taimoor"
+                  src={"/images/home/banner/Sami.jpeg"}
+                  alt="Abdul Sami"
                   fill
                   className="object-cover"
                   priority
