@@ -15,23 +15,23 @@ const Header = () => {
     <header className="navbar top-0 left-0 z-[999] w-full absolute">
       <div className="container">
         <nav className="py-7">
-          <div className="flex items-center justify-between gap-4 sm:gap-8 w-full">
-            <div className="flex items-center gap-4 sm:gap-8">
-              <div>
+          <div className="flex items-center justify-between gap-2 sm:gap-4 w-full">
+            <div className="flex items-center gap-2 sm:gap-4 md:gap-8">
+              <div className="shrink-0">
                 <Logo />
               </div>
 
               <Button
                 variant={"outline"}
                 onClick={handleDownloadPDF}
-                className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
+                className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-3 sm:px-5 md:px-7 border border-primary rounded-full group"
               >
-                <span className="relative z-10 text-sm sm:text-lg md:text-xl font-medium text-black group-hover:text-white transition-colors duration-300">
+                <span className="relative z-10 text-xs sm:text-sm md:text-lg font-medium text-black group-hover:text-white transition-colors duration-300 whitespace-nowrap">
                   {t("resume.download")}
                 </span>
               </Button>
             </div>
-            <div>
+            <div className="shrink-0">
               <LanguageSwitcher />
             </div>
           </div>

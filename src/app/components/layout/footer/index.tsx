@@ -13,11 +13,11 @@ const Footer = () => {
             </div>
             <div className="grow h-px bg-black" />
           </div>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-center sm:text-left text-sm sm:text-base mt-4 sm:mt-0">
             2026 © Designed by{" "}
             <Link
               href={"/"}
-              className="hover:text-black font-semibold"
+              className="hover:text-black font-semibold transition-colors"
             >
               Abdul Sami
             </Link>{" "}

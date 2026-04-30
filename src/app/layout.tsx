@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Full-Stack Developer — MERN & PERN stack, POS systems, and production deployments.",
   icons: {
-    icon: "/images/logo/LOGO.png",
+    icon: "/favicon.jpeg",
   },
 };
 
