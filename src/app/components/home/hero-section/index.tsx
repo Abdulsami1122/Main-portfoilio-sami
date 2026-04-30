@@ -36,7 +36,7 @@ const HeroSection = () => {
                   src={"/images/home/banner/Sami.jpeg"}
                   alt="Abdul Sami"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_30%] scale-[1.15]"
                   priority
                 />
               </div>

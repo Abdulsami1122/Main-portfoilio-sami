@@ -18,7 +18,7 @@ export const dictionaries = {
   en: {
     "hero.role": "Full-Stack Developer",
     "hero.desc": "Specializing in MERN and PERN stack development, I build scalable real-world applications with a focus on performance and seamless user experience.",
-    "resume.download": "Download PDF Resume",
+    "resume.download": "Download CV",
   },
   ar: {
     "hero.role": "مطور ويب شامل",

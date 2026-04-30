@@ -30,7 +30,7 @@ const contactBar = {
     {
       platform: "linkedin",
       icon: "/images/icon/linkedin-icon.svg",
-      link: "https://www.linkedin.com/in/abdulsami1122",
+      link: "https://www.linkedin.com/in/abdul-sami-304a162b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
   ],
 };
@@ -43,7 +43,7 @@ const educationData = {
     },
     {
       title: "FSc in Computer Science (2020 - 2022)",
-      description: "Govt College Peshawar.",
+      description: "Farabi Degree college tehkal peshawar",
     },
   ],
   skills: [
@@ -88,7 +88,7 @@ const contactLinks = {
     },
     {
       title: "LinkedIn",
-      href: "https://www.linkedin.com/in/abdulsami1122",
+      href: "https://www.linkedin.com/in/abdul-sami-304a162b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
   ],
   contactInfo: [
