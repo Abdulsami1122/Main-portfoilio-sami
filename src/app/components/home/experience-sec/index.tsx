@@ -20,12 +20,12 @@ const ExperienceSec = () => {
     },
 
     {
-      year: "2021 – 2024",
-      title: "Zaryab Traders",
-      company: "Zaryab Traders",
-      type: "Trainee",
+      year: "2025 - 2026",
+      title: "Wiser Consulting Website (MERN & Next.js)",
+      company: "Wiser Consulting",
+      type: "Full-Stack Development",
       description:
-        "Worked as a trainee and gaining hands-on experience in accounting and financial operations. Learned full-stack development using MERN designed UI/UX using Figma, managed projects on GitHub, and developed skills in digital marketing.",
+        "Developed a comprehensive visa assessment and consulting website for Wiser Consulting to assist clients with visa documentation and global immigration processes.",
     },
   ];
 

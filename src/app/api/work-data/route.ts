@@ -16,7 +16,7 @@ const workData = [
   },
   {
     image: "/images/work/visa.png",
-    title: "Visa Consulting Website (MERN)",
+    title: "Wiser Consulting Website (MERN)",
     client: "Global visa assistance, documentation, and user-friendly portal",
     slug: "#",
   },
