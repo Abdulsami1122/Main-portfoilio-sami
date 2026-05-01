@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
@@ -15,7 +15,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     }, 1500);
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
@@ -31,7 +31,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     }
   };
 
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
     visible: { 
       opacity: 1, 
@@ -41,7 +41,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     }
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
@@ -50,12 +50,12 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     }
   };
 
-  const doorVariants = {
+  const doorVariants: Variants = {
     initial: { y: "0%", borderRadius: "0 0 0 0" },
     exit: { 
       y: "-100%", 
       borderRadius: "0 0 50% 50%",
-      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.1 }
+      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.1 }
     }
   };
 
