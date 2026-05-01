@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 import { LanguageProvider } from "./context/LanguageContext";
-import { CustomCursor } from "./components/ui/custom-cursor";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export default function RootLayout({
   children,
@@ -26,10 +26,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={bricolageGrotesque.className}>
-        <LanguageProvider>
-          <CustomCursor />
-          {children}
-        </LanguageProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

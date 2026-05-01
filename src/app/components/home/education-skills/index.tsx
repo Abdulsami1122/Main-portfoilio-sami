@@ -47,7 +47,7 @@ const EducationSkills = () => {
         <div className="container relative z-10">
 
           <div className="relative z-10 py-16 md:py-32">
-            <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 xl:mb-16">
+            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 xl:mb-16">
               <h2>Education & Skills</h2>
               <p className="text-xl text-primary">
                 ( {String(
@@ -61,8 +61,8 @@ const EducationSkills = () => {
                 {educationData?.education?.map((value: any, index: any) => {
                   return (
                     <div key={index} className="flex items-start gap-6">
-                      <div className="no-print mt-2.5 w-3.5 h-3.5 rounded-full border-1 bg-white flex items-center justify-center border-black">
-                        <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
+                      <div className="no-print mt-2.5 w-3.5 h-3.5 rounded-full border-1 bg-background flex items-center justify-center border-foreground">
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
                       </div>
                       <div className="flex-1 flex flex-col gap-2">
                         <h5>{value?.title}</h5>
@@ -79,11 +79,11 @@ const EducationSkills = () => {
                       key={index}
                       className="p-4 xl:p-6 border border-muted rounded-lg flex flex-col gap-5 sm:gap-10 items-center justify-between"
                     >
-                      <div className="flex flex-col items-center gap-5">
-                        <div className="text-black mb-2">
+                      <div className="flex flex-col items-center gap-5 text-center">
+                        <div className="text-foreground mb-2">
                           {getIcon(value?.name)}
                         </div>
-                        <p className="text-black font-normal">{value?.name}</p>
+                        <p className="text-foreground font-medium">{value?.name}</p>
                       </div>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
@@ -94,12 +94,13 @@ const EducationSkills = () => {
                             viewBox="0 0 9 9"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            className={i < value?.rating ? "text-foreground" : "text-muted"}
                           >
                             <rect
                               width="9"
                               height="9"
                               rx="4.5"
-                              fill={i < value?.rating ? "#000000" : "#E0E0E0"}
+                              fill="currentColor"
                             />
                           </svg>
                         ))}

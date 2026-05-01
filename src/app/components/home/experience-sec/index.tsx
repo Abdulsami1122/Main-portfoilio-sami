@@ -33,7 +33,7 @@ const ExperienceSec = () => {
     <section>
       <div className="py-16 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
+          <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
             <h2>Experience</h2>
             <p className="text-xl text-primary">
               ( {String(experiences.length).padStart(2, "0")} )
@@ -47,7 +47,7 @@ const ExperienceSec = () => {
                 className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 md:gap-4 xl:gap-8 items-start relative"
               >
                 <div className="">
-                  <h3 className="font-bold mb-2 text-black">{exp.year}</h3>
+                  <h3 className="font-bold mb-2 text-foreground">{exp.year}</h3>
                   <h4 className="text-lg font-normal">{exp.title}</h4>
                 </div>
 
@@ -60,18 +60,21 @@ const ExperienceSec = () => {
 
                   <div className="no-print absolute left-0 top-0 transform -translate-x-1/2">
                     <div
-                      className={`no-print w-3.5 h-3.5 rounded-full border-1 bg-white flex items-center justify-center ${index === 0 ? "border-primary" : "border-black"
+                      className={`no-print w-3.5 h-3.5 rounded-full border-1 bg-background flex items-center justify-center ${index === 0 ? "border-primary" : "border-foreground"
                         }`}
                     >
                       {index === 0 && (
                         <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                      )}
+                      {index !== 0 && (
+                        <div className="w-1.5 h-1.5 rounded-full bg-foreground"></div>
                       )}
                     </div>
                   </div>
 
                   <div className="pl-4 lg:pl-7">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xl text-black font-normal">
+                      <span className="text-xl text-foreground font-normal">
                         {exp.company}
                       </span>
                     </div>

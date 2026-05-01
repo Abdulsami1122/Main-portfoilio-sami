@@ -73,7 +73,7 @@ const Contact = () => {
     <section className="no-print">
       <div className="container">
         <div className="pt-16 md:pt-32 pb-20">
-          <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
+          <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
             <h2>Contact Me</h2>
             <p className="text-xl text-primary">( 05 )</p>
           </div>
@@ -183,7 +183,7 @@ const Contact = () => {
                     <div key={index}>
                       <Link
                         href={value?.link}
-                        className="text-base lg:text-lg text-black font-normal border-b border-black pb-3 hover:text-primary hover:border-primary"
+                        className="text-base lg:text-lg text-foreground font-normal border-b border-foreground/30 pb-3 hover:text-primary hover:border-primary"
                       >
                         {value?.label}
                       </Link>

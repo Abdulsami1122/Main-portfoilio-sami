@@ -9,7 +9,7 @@ const AboutMe = () => {
 
         <div className="relative z-10">
           <div className="container">
-            <div className="flex items-center justify-between gap-2 border-b border-black pb-7">
+            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7">
               <h2>About Me</h2>
               <p className="text-xl text-primary">( 01 )</p>
             </div>
@@ -42,7 +42,7 @@ const AboutMe = () => {
                   ].map((item, i) => (
                     <div key={i}>
                       <h3>{item.count}</h3>
-                      <p className="text-base md:text-lg text-black">
+                      <p className="text-base md:text-lg text-foreground">
                         {item.label}
                       </p>
                     </div>
@@ -57,15 +57,15 @@ const AboutMe = () => {
                       width={30}
                       height={30}
                     />
-                    <p className="text-base xl:text-xl text-black">Language</p>
+                    <p className="text-base xl:text-xl text-foreground">Language</p>
                   </div>
                   <div className="flex flex-wrap justify-center items-center gap-2.5">
                     {["English", "Urdu", "Pashto"].map((lang, index) => (
                       <Badge
                         key={index}
-                        className="h-full bg-white rounded-full"
+                        className="h-full bg-background rounded-full"
                       >
-                        <p className="bg-white py-2 md:py-3.5 px-4 md:px-5 text-base xl:text-xl text-muted-foreground">
+                        <p className="bg-background py-2 md:py-3.5 px-4 md:px-5 text-base xl:text-xl text-muted-foreground">
                           {lang}
                         </p>
                       </Badge>

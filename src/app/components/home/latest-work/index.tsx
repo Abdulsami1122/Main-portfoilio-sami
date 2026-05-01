@@ -26,7 +26,7 @@ const LatestWork = () => {
       <div className="bg-muted">
         <div className="container">
           <div className="py-16 xl:py-32 ">
-            <div className="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
+            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
               <h2>Latest Works</h2>
                 <p className="text-xl text-primary">
                   ( {String(workData?.length || 0).padStart(2, "0")} )

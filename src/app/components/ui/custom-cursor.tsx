@@ -50,7 +50,7 @@ export function CustomCursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-[10000] rounded-full border border-primary/40 transition-all duration-100 ease-out flex items-center justify-center bg-primary/10 shadow-sm"
+      className="fixed pointer-events-none z-[99999] rounded-full border border-primary/40 transition-all duration-100 ease-out flex items-center justify-center bg-primary/10 shadow-sm"
       style={{
         left: 0,
         top: 0,
