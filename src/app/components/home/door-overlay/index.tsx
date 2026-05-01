@@ -12,7 +12,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     onOpen();
     setTimeout(() => {
       setIsVisible(false);
-    }, 1500);
+    }, 800);
   };
 
   const containerVariants: Variants = {
@@ -20,14 +20,14 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     visible: { 
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.1
       }
     },
     exit: { 
       opacity: 0,
       scale: 1.05,
-      transition: { duration: 0.6, ease: "easeInOut" } 
+      transition: { duration: 0.4, ease: "easeInOut" } 
     }
   };
 
@@ -37,7 +37,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
       opacity: 1, 
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 1, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" }
     }
   };
 
@@ -46,7 +46,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.4, ease: "easeOut" }
     }
   };
 
@@ -55,7 +55,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     exit: { 
       y: "-100%", 
       borderRadius: "0 0 50% 50%",
-      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.1 }
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.1 }
     }
   };
 
@@ -106,12 +106,6 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
             className="relative z-[10002] flex flex-col items-center justify-center space-y-12 px-4 w-full max-w-5xl"
           >
             <div className="text-center space-y-6 flex flex-col items-center w-full">
-              <motion.div variants={textVariants} className="overflow-hidden">
-                <h2 className="text-sm md:text-base font-medium text-neutral-400 tracking-[0.4em] uppercase mb-2">
-                  Portfolio Entry
-                </h2>
-              </motion.div>
-              
               <motion.div variants={textVariants} className="overflow-hidden py-2">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight uppercase leading-tight" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.5)' }}>
                   Welcome To My
