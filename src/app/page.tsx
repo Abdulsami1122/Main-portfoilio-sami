@@ -31,8 +31,10 @@ const page = () => {
         }}
       />
       <main
-        className={`transition-all duration-1000 ${isPortfolioOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-          }`}
+        className={`transition-opacity duration-700 ease-out ${
+          isPortfolioOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        style={{ willChange: "opacity" }}
       >
         <Header />
         <HeroSection />

@@ -12,7 +12,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     onOpen();
     setTimeout(() => {
       setIsVisible(false);
-    }, 800);
+    }, 700); // Updated to match the animation duration
   };
 
   const containerVariants: Variants = {
@@ -26,23 +26,22 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     },
     exit: { 
       opacity: 0,
-      scale: 1.05,
+      scale: 1.02, // Reduced from 1.05 for smoother feel
       transition: { duration: 0.4, ease: "easeInOut" } 
     }
   };
 
   const textVariants: Variants = {
-    hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+    hidden: { opacity: 0, y: 20 }, // Removed blur filter as it's heavy on mobile
     visible: { 
       opacity: 1, 
       y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] } // Using a more natural ease-out
     }
   };
 
   const buttonVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -54,8 +53,12 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
     initial: { y: "0%", borderRadius: "0 0 0 0" },
     exit: { 
       y: "-100%", 
-      borderRadius: "0 0 50% 50%",
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number], delay: 0.1 }
+      borderRadius: "0 0 30% 30%", // Reduced curvature for performance
+      transition: { 
+        duration: 0.7, // Slightly faster for responsiveness
+        ease: [0.76, 0, 0.24, 1], 
+        delay: 0.1 
+      }
     }
   };
 
@@ -66,6 +69,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
       {!isOpening && (
         <motion.div
           className="fixed inset-0 z-[10000] flex overflow-hidden bg-[#050505] flex-col items-center justify-center"
+          style={{ willChange: "transform, border-radius" }} // Hint for the browser
           variants={doorVariants}
           initial="initial"
           exit="exit"
@@ -73,28 +77,30 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
           {/* Subtle animated background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div 
-              className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] rounded-full bg-indigo-500/10 blur-[120px]"
+              className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] rounded-full bg-indigo-500/10 blur-[80px] md:blur-[120px]"
+              style={{ willChange: "transform, opacity" }}
               animate={{ 
-                x: [0, 100, 0], 
-                y: [0, 50, 0],
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3] 
+                x: [0, 50, 0], // Reduced movement distance for smoother feel
+                y: [0, 25, 0],
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.4, 0.3] 
               }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
             <motion.div 
-              className="absolute -bottom-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full bg-rose-500/10 blur-[120px]"
+              className="absolute -bottom-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full bg-rose-500/10 blur-[80px] md:blur-[120px]"
+              style={{ willChange: "transform, opacity" }}
               animate={{ 
-                x: [0, -100, 0], 
-                y: [0, -50, 0],
-                scale: [1, 1.3, 1],
-                opacity: [0.2, 0.4, 0.2] 
+                x: [0, -50, 0],
+                y: [0, -25, 0],
+                scale: [1, 1.1, 1],
+                opacity: [0.2, 0.3, 0.2] 
               }}
-              transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
             />
             
-            {/* Grid Pattern overlay for texture */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_20%,transparent_100%)]" />
+            {/* Grid Pattern overlay for texture - mask-image removed on mobile for performance */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] md:[mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_20%,transparent_100%)]" />
           </div>
 
           {/* Center Content */}
@@ -107,10 +113,13 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
           >
             <div className="text-center space-y-6 flex flex-col items-center w-full">
               <motion.div variants={textVariants} className="overflow-hidden py-2">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight uppercase leading-tight" style={{ textShadow: '0 10px 40px rgba(0,0,0,0.5)' }}>
+                <h1 
+                  className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight uppercase leading-tight" 
+                  style={{ textShadow: '0 4px 20px rgba(0,0,0,0.3)' }} // Optimized shadow for mobile
+                >
                   Welcome To My
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-500">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
                     Portfolio
                   </span>
                 </h1>

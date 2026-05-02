@@ -20,12 +20,21 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="flex w-full justify-center lg:justify-end mt-12 lg:mt-0 lg:w-1/2">
-            <div className="relative flex h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px] items-center justify-center animate-float">
+            <div 
+              className="relative flex h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px] items-center justify-center animate-float"
+              style={{ willChange: "transform" }}
+            >
               {/* Outer rotating dashed ring */}
-              <div className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/50 animate-spin-slow"></div>
+              <div 
+                className="absolute inset-0 rounded-full border-[3px] border-dashed border-primary/50 animate-spin-slow"
+                style={{ willChange: "transform" }}
+              ></div>
 
               {/* Diffused morphing glow effect */}
-              <div className="absolute inset-4 bg-primary/20 animate-morph blur-2xl"></div>
+              <div 
+                className="absolute inset-4 bg-primary/20 animate-morph blur-xl md:blur-2xl"
+                style={{ willChange: "border-radius" }}
+              ></div>
 
               {/* Solid inner border for contrast */}
               <div className="absolute inset-6 rounded-full border border-primary/20"></div>
