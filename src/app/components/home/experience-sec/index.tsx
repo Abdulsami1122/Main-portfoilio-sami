@@ -4,7 +4,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 
 const ExperienceSec = () => {
   const { t } = useLanguage();
-  
+
   const experiences = [
     {
       year: "2026 - PRESENT",

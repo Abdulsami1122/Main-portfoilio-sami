@@ -31,9 +31,8 @@ const page = () => {
         }}
       />
       <main
-        className={`transition-opacity duration-700 ease-out ${
-          isPortfolioOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`transition-opacity duration-700 ease-out ${isPortfolioOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         style={{ willChange: "opacity" }}
       >
         <Header />

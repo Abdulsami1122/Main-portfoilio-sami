@@ -4,7 +4,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 
 const AboutMe = () => {
   const { t } = useLanguage();
-  
+
   return (
     <section>
       <div className="relative bg-muted py-10 md:py-32">
