@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
+import { useLanguage } from "@/app/context/LanguageContext";
+
 const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
   const [isOpening, setIsOpening] = useState(false);
 
@@ -135,10 +138,10 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight uppercase leading-tight" 
                   style={{ textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}
                 >
-                  Welcome To My
+                  {t("welcome.title")}
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
-                    Portfolio
+                    {t("welcome.portfolio")}
                   </span>
                 </h1>
               </motion.div>
@@ -153,7 +156,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
                   <span className="relative z-10 flex items-center gap-3">
-                    Open Portfolios
+                    {t("welcome.open")}
                     <svg className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

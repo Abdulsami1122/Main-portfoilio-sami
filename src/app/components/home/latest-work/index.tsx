@@ -2,8 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const LatestWork = () => {
+  const { t } = useLanguage();
   const [workData, setWorkData] = useState<any>(null);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const LatestWork = () => {
         <div className="container">
           <div className="py-16 xl:py-32 ">
             <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
-              <h2>Latest Works</h2>
+              <h2>{t("work.title")}</h2>
               <p className="text-xl text-primary">
                 ( {String(workData?.length || 0).padStart(2, "0")} )
               </p>
@@ -91,7 +93,7 @@ const LatestWork = () => {
                           height={30}
                         />
                       </div>
-                      <p>Client: {value?.client}</p>
+                      <p>{t("work.client")}: {value?.client}</p>
                     </div>
                   </div>
                 );
@@ -105,3 +107,4 @@ const LatestWork = () => {
 };
 
 export default LatestWork;
+

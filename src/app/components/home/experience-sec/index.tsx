@@ -1,31 +1,31 @@
+"use client";
 import React from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const ExperienceSec = () => {
+  const { t } = useLanguage();
+  
   const experiences = [
     {
       year: "2026 - PRESENT",
-      title: "POS Double Accounting (PERN)",
+      title: t("exp.1.title"),
       company: "",
-      type: "Full-Stack Development",
-      description:
-        "Developed a full-stack POS system using PostgreSQL, Express.js, React.js, and Node.js, featuring double-entry accounting, customizable Chart of Accounts, inventory and warehouse management, sales/purchase modules, dropshipping workflow, and investor management, with scalable architecture deployed for clients in Pakistan and China.",
+      type: t("exp.type.fullstack"),
+      description: t("exp.1.desc"),
     },
     {
       year: "2025 - 2026",
-      title: "Gul Traders Website (MERN)",
+      title: t("exp.2.title"),
       company: "Gul Traders",
-      type: "E-commerce Development",
-      description:
-        "Developed a full-stack MERN e-commerce website with responsive UI/UX, featuring both admin and user panels, optimized for business operations and seamless user experience.",
+      type: t("exp.type.ecommerce"),
+      description: t("exp.2.desc"),
     },
-
     {
       year: "2025 - 2026",
-      title: "Wiser Consulting Website (MERN & Next.js)",
+      title: t("exp.3.title"),
       company: "Wiser Consulting",
-      type: "Full-Stack Development",
-      description:
-        "Developed a comprehensive visa assessment and consulting website for Wiser Consulting to assist clients with visa documentation and global immigration processes.",
+      type: t("exp.type.fullstack"),
+      description: t("exp.3.desc"),
     },
   ];
 
@@ -34,7 +34,7 @@ const ExperienceSec = () => {
       <div className="py-16 md:py-32">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
-            <h2>Experience</h2>
+            <h2>{t("exp.title")}</h2>
             <p className="text-xl text-primary">
               ( {String(experiences.length).padStart(2, "0")} )
             </p>
@@ -95,3 +95,4 @@ const ExperienceSec = () => {
 };
 
 export default ExperienceSec;
+

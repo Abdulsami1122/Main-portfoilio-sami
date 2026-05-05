@@ -6,8 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [contactData, setContactData] = useState<any>(null);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,10 +35,12 @@ const Contact = () => {
   }, []);
 
   const reset = () => {
-    formData.name = "";
-    formData.number = "";
-    formData.email = "";
-    formData.message = "";
+    setFormData({
+      name: "",
+      number: "",
+      email: "",
+      message: "",
+    });
   };
 
   const handleSubmit = async (e: any) => {
@@ -74,7 +78,7 @@ const Contact = () => {
       <div className="container">
         <div className="pt-16 md:pt-32 pb-20">
           <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
-            <h2>Contact Me</h2>
+            <h2>{t("contact.title")}</h2>
             <p className="text-xl text-primary">( 05 )</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -83,7 +87,7 @@ const Contact = () => {
                 <div className="grid grid-cols-2 gap-8">
                   <div>
                     <Label htmlFor="name" className="label">
-                      Name *
+                      {t("contact.name")} *
                     </Label>
                     <Input
                       required
@@ -96,7 +100,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <Label htmlFor="number" className="label">
-                      Phone *
+                      {t("contact.phone")} *
                     </Label>
                     <Input
                       required
@@ -111,7 +115,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <Label htmlFor="email" className="label">
-                    Email *
+                    {t("contact.email")} *
                   </Label>
                   <Input
                     required
@@ -125,7 +129,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <Label htmlFor="message" className="label">
-                    Message *
+                    {t("contact.message")} *
                   </Label>
                   <Textarea
                     required
@@ -146,8 +150,7 @@ const Contact = () => {
                       height={30}
                     />
                     <p className="text-muted-foreground">
-                      Great!!! Email has been Successfully Sent. We will get in
-                      touch asap.
+                      {t("contact.success")}
                     </p>
                   </div>
                 )}
@@ -157,7 +160,7 @@ const Contact = () => {
                   className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
                 >
                   <span className="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
-                    Send Now
+                    {t("contact.send")}
                   </span>
                 </Button>
               </div>
@@ -200,3 +203,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

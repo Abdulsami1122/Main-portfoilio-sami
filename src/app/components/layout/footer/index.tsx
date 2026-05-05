@@ -1,7 +1,10 @@
 import Logo from "../logo";
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="py-6 sm:py-14 flex items-center justify-center">
       <div className="container">
@@ -14,14 +17,14 @@ const Footer = () => {
             <div className="grow h-px bg-foreground/30" />
           </div>
           <p className="text-muted-foreground text-center sm:text-left text-sm sm:text-base mt-4 sm:mt-0">
-            2026 © Designed by{" "}
+            2026 © {t("footer.designed")}{" "}
             <Link
               href={"/"}
               className="hover:text-foreground font-semibold transition-colors"
             >
               Abdul Sami
             </Link>{" "}
-            - All rights reserved.
+            - {t("footer.rights")}
           </p>
         </div>
       </div>
@@ -30,3 +33,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
