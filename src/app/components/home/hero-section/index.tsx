@@ -18,14 +18,6 @@ const HeroSection = () => {
             <p className="text-muted-foreground font-normal max-w-md xl:max-w-xl">
               {t("hero.desc")}
             </p>
-            <div className="mt-4">
-              <button 
-                onClick={() => window.open("/images/resumedownload/Abdul-Sami-CV.pdf", "_blank")}
-                className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-all cursor-pointer"
-              >
-                {t("resume.download")}
-              </button>
-            </div>
           </div>
           <div className="flex w-full justify-center lg:justify-end mt-12 lg:mt-0 lg:w-1/2">
             <div
