@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 import { useLanguage } from "@/app/context/LanguageContext";
 
@@ -128,11 +129,27 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
                 }}
                 transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] md:[mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_20%,transparent_100%)]" />
+              <div className="absolute inset-0 md:[mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_20%,transparent_100%)] overflow-hidden">
+                <div className="absolute inset-[-50%] origin-center rotate-[45deg] bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+              </div>
             </div>
 
             {/* Center Content */}
-            <div className="relative z-30 flex flex-col items-center justify-center space-y-12 px-4 w-full max-w-5xl text-center">
+            <div className="relative z-30 flex flex-col items-center justify-center space-y-8 md:space-y-12 px-4 w-full max-w-5xl text-center">
+              
+              {/* Mobile Profile Image */}
+              <motion.div variants={textVariants} className="md:hidden flex flex-col items-center justify-center">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl bg-muted/20">
+                  <Image
+                    src="/images/home/banner/Sami.jpeg"
+                    alt="Abdul Sami"
+                    fill
+                    className="object-cover object-[center_30%] scale-[1.15]"
+                    priority
+                  />
+                </div>
+              </motion.div>
+
               <motion.div variants={textVariants} className="overflow-hidden py-2">
                 <h1 
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight uppercase leading-tight" 
