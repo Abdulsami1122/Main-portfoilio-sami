@@ -54,8 +54,12 @@ const Contact = () => {
 
     try {
       const templateParams = {
+        name: formData.name,
         from_name: formData.name,
+        email: formData.email,
         from_email: formData.email,
+        phone: formData.number,
+        number: formData.number,
         phone_number: formData.number,
         message: formData.message,
         to_name: 'Abdul Sami',
@@ -65,7 +69,7 @@ const Contact = () => {
         'service_lwmn71k',   // Your Service ID
         'template_pcixscm',  // Your Template ID
         templateParams,
-        'ROaDdZjA8LE8YO14e'  // Your Public KeY
+        'ROaDdZjA8LE8YO14e'  // Your Public Key
       );
 
       if (response.status === 200) {
