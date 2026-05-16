@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -52,16 +53,31 @@ const Contact = () => {
     setSubmitted(false);
 
     try {
-      // Direct email link as a reliable fallback while you set up your App Password
-      const subject = encodeURIComponent(`Portfolio Message from ${formData.name}`);
-      const body = encodeURIComponent(`Name: ${formData.name}\nPhone: ${formData.number}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-      window.location.href = `mailto:samij7141@gmail.com?subject=${subject}&body=${body}`;
-      
-      setSubmitted(true);
-      reset();
-      setTimeout(() => setSubmitted(false), 5000);
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone_number: formData.number,
+        message: formData.message,
+        to_name: 'Abdul Sami',
+      };
+
+      const response = await emailjs.send(
+        'service_lwmn71k',   // Your Service ID
+        'template_pcixscm',  // Your Template ID
+        templateParams,
+        'ROaDdZjA8LE8YO14e'  // Your Public KeY
+      );
+
+      if (response.status === 200) {
+        setSubmitted(true);
+        reset();
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
     } catch (err: any) {
-      setError("An error occurred. Please try again later.");
+      setError("An error occurred. Please check your EmailJS settings.");
+      console.error('EmailJS Error:', err);
     } finally {
       setIsSubmitting(false);
     }
