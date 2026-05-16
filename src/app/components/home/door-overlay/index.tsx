@@ -87,7 +87,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
             variants={leftDoorVariants}
             initial="initial"
             exit="exit"
-            className="absolute left-0 top-0 bottom-0 w-1/2 bg-[#050505] z-10"
+            className="absolute left-0 top-0 bottom-0 w-1/2 bg-[#1c1c1c] z-10"
           />
           
           {/* Right Door */}
@@ -95,7 +95,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
             variants={rightDoorVariants}
             initial="initial"
             exit="exit"
-            className="absolute right-0 top-0 bottom-0 w-1/2 bg-[#050505] z-10"
+            className="absolute right-0 top-0 bottom-0 w-1/2 bg-[#1c1c1c] z-10"
           />
 
           {/* Content Wrapper (fades out) */}
