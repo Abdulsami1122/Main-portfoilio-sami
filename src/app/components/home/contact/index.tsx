@@ -12,6 +12,8 @@ const Contact = () => {
   const { t } = useLanguage();
   const [contactData, setContactData] = useState<any>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     number: "",
@@ -45,26 +47,26 @@ const Contact = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setError("");
+    setSubmitted(false);
 
-    fetch("https://formsubmit.co/ajax/samij7141@gmail.com", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        name: formData.name,
-        number: formData.number,
-        email: formData.email,
-        message: formData.message,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setSubmitted(data.success);
-        reset();
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    try {
+      // Direct email link as a reliable fallback while you set up your App Password
+      const subject = encodeURIComponent(`Portfolio Message from ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nPhone: ${formData.number}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      window.location.href = `mailto:samij7141@gmail.com?subject=${subject}&body=${body}`;
+      
+      setSubmitted(true);
+      reset();
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err: any) {
+      setError("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -141,6 +143,11 @@ const Contact = () => {
                     rows={2}
                   />
                 </div>
+                {error && (
+                  <div className="flex items-center gap-2">
+                    <p className="text-red-500 font-medium">{error}</p>
+                  </div>
+                )}
                 {submitted && (
                   <div className="flex items-center gap-2">
                     <Image
@@ -157,10 +164,11 @@ const Contact = () => {
                 <Button
                   variant="outline"
                   type="submit"
-                  className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group"
+                  disabled={isSubmitting}
+                  className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group disabled:opacity-50"
                 >
                   <span className="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
-                    {t("contact.send")}
+                    {isSubmitting ? "Sending..." : t("contact.send")}
                   </span>
                 </Button>
               </div>
