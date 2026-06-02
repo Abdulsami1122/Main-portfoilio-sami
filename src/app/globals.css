@@ -20,7 +20,7 @@ button::before {
   width: 100%;
   height: 0%;
   background-color: rgba(30, 30, 30, 0.85);
-  /* Black smoke color */
+  /* Blaack smoke color */
   transition: height 0.3s ease;
   z-index: 0;
   border-radius: inherit;
