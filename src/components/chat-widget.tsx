@@ -39,7 +39,7 @@ export function ChatWidget() {
         </button>
       )}
 
-      {/* Chat Modal */}
+      {/* Chaat Modal */}
       {isOpen && (
         <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-96 max-w-lg h-[70vh] sm:h-[600px] max-h-[90vh] bg-white dark:bg-gray-900 rounded-xl sm:rounded-lg shadow-2xl flex flex-col border border-gray-200 dark:border-gray-700">
           {/* Header */}
@@ -88,11 +88,10 @@ export function ChatWidget() {
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-xs sm:max-w-sm px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm ${
-                    msg.role === 'user'
+                  className={`max-w-xs sm:max-w-sm px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm ${msg.role === 'user'
                       ? 'bg-blue-600 text-white rounded-br-none'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-bl-none'
-                  }`}
+                    }`}
                 >
                   <p className="break-words">{msg.content}</p>
                 </div>
