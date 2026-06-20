@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 };
 
 import { LanguageProvider } from "./context/LanguageContext";
+import { ChatProvider } from "./context/ChatContext";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ChatWidget } from "@/components/chat-widget";
 
 export default function RootLayout({
   children,
@@ -33,7 +35,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            {children}
+            <ChatProvider>
+              {children}
+              <ChatWidget />
+            </ChatProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>

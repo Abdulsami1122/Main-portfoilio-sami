@@ -30,6 +30,10 @@ button:hover::before {
   height: 100%;
 }
 
+button.no-overlay::before {
+  display: none !important;
+}
+
 .wave {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -205,6 +209,15 @@ button:hover::before {
     break-before: page;
     page-break-before: always;
   }
+}
+
+/* Animation delay utilities for chat widget */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
 }
 
 @theme inline {
