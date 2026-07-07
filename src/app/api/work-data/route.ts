@@ -15,7 +15,7 @@ const workData = [
     slug: "https://gultraders.com/",
   },
   {
-    image: "/images/work/visa.png",
+    image: "/images/work/visa-mockup.png",
     title: "Wiser Consulting Website (MERN)",
     client: "Global visa assistance, documentation, and user-friendly portal",
     slug: "https://wiserconsulting.info/",

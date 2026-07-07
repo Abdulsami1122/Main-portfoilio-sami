@@ -21,7 +21,7 @@ const Header = () => {
   }, []);
 
   const handleDownloadPDF = () => {
-    window.open("/images/resumedownload/Abdul-Sami-CV.pdf", "_blank");
+    window.open("/images/resumedownload/Abdul-Sami-SE.pdf", "_blank");
   };
 
   return (
