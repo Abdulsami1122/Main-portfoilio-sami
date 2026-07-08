@@ -23,7 +23,7 @@ const ExperienceSec = () => {
     {
       year: "2025 - 2026",
       title: t("exp.3.title"),
-      company: "Tech Wiser Consulting",
+      company: "Wiser Consulting",
       type: t("exp.type.fullstack"),
       description: t("exp.3.desc"),
     },
