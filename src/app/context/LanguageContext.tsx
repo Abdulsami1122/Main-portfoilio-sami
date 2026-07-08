@@ -45,8 +45,8 @@ export const dictionaries = {
     "exp.1.desc": "Developed a full-stack POS system using PostgreSQL, Express.js, React.js, and Node.js, featuring double-entry accounting, customizable Chart of Accounts, inventory and warehouse management, sales/purchase modules, dropshipping workflow, and investor management.",
     "exp.2.title": "Gul Traders Website (MERN)",
     "exp.2.desc": "Developed a full-stack MERN e-commerce website with responsive UI/UX, featuring both admin and user panels, optimized for business operations.",
-    "exp.3.title": "Wiser Consulting Website (MERN & Next.js)",
-    "exp.3.desc": "Developed a comprehensive visa assessment and consulting website for Wiser Consulting to assist clients with visa documentation.",
+    "exp.3.title": "Tech Wiser Consulting Website (MERN & Next.js)",
+    "exp.3.desc": "Developed a comprehensive visa assessment and consulting website for Tech Wiser Consulting to assist clients with visa documentation.",
     "exp.type.fullstack": "Full-Stack Development",
     "exp.type.ecommerce": "E-commerce Development",
     
@@ -95,8 +95,8 @@ export const dictionaries = {
     "exp.1.desc": "تطوير نظام POS شامل باستخدام PostgreSQL و Express.js و React.js و Node.js، يتميز بالمحاسبة المزدوجة، وإدارة المخزون والمستودعات، ووحدات البيع/الشراء.",
     "exp.2.title": "موقع Gul Traders (MERN)",
     "exp.2.desc": "تطوير موقع تجارة إلكترونية كامل باستخدام MERN مع واجهة مستخدم مستجيبة، يتميز بلوحات تحكم للمسؤول والمستخدم.",
-    "exp.3.title": "موقع Wiser Consulting (MERN & Next.js)",
-    "exp.3.desc": "تطوير موقع شامل لتقييم التأشيرات والاستشارات لمساعدة العملاء في توثيق التأشيرات وعمليات الهجرة العالمية.",
+    "exp.3.title": "موقع Tech Wiser Consulting (MERN & Next.js)",
+    "exp.3.desc": "تطوير موقع شامل لتقييم التأشيرات والاستشارات لمساعدة العملاء في توثيق التأشيرات لشركة Tech Wiser Consulting.",
     "exp.type.fullstack": "تطوير شامل",
     "exp.type.ecommerce": "تطوير التجارة الإلكترونية",
     
@@ -145,8 +145,8 @@ export const dictionaries = {
     "exp.1.desc": "میں نے PostgreSQL، Express.js، React.js، اور Node.js کا استعمال کرتے ہوئے ایک مکمل POS سسٹم تیار کیا ہے جس میں اکاؤنٹنگ، انوینٹری مینجمنٹ اور انویسٹر مینجمنٹ کی سہولیات موجود ہیں۔",
     "exp.2.title": "Gul Traders ویب سائٹ (MERN)",
     "exp.2.desc": "ایک مکمل MERN ای کامرس ویب سائٹ تیار کی جس میں ایڈمن اور یوزر پینلز شامل ہیں، جو کاروباری ضروریات کے مطابق بنائی گئی ہے۔",
-    "exp.3.title": "Wiser Consulting ویب سائٹ (MERN & Next.js)",
-    "exp.3.desc": "ایک مکمل ویزا اسیسمنٹ اور کنسلٹنگ ویب سائٹ تیار کی جو کلائنٹس کو ویزا دستاویزات اور امیگریشن کے عمل میں مدد فراہم کرتی ہے۔",
+    "exp.3.title": "Tech Wiser Consulting ویب سائٹ (MERN & Next.js)",
+    "exp.3.desc": "Tech Wiser Consulting کے لیے ایک مکمل ویزا اسیسمنٹ اور کنسلٹنگ ویب سائٹ تیار کی جو کلائنٹس کو ویزا دستاویزات اور امیگریشن کے عمل میں مدد فراہم کرتی ہے۔",
     "exp.type.fullstack": "فل اسٹیک ڈیولپمنٹ",
     "exp.type.ecommerce": "ای کامرس ڈیولپمنٹ",
     

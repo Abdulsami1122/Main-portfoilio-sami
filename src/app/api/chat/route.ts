@@ -81,17 +81,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: assistantMessage });
   } catch (error) {
     console.error('Chat API error:', error);
-    
+
     if (error instanceof Error) {
       const errorMessage = error.message.toLowerCase();
-      
+
       if (errorMessage.includes('401') || errorMessage.includes('unauthorized') || errorMessage.includes('api key')) {
         return NextResponse.json(
           { error: 'Invalid Groq API key. Please check your .env.local file and ensure the API key is correct. Get one from https://console.groq.com/' },
           { status: 401 }
         );
       }
-      
+
       if (errorMessage.includes('429')) {
         return NextResponse.json(
           { error: 'Rate limit exceeded. Please wait a moment and try again.' },

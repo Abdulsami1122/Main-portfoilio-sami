@@ -16,9 +16,15 @@ const workData = [
   },
   {
     image: "/images/work/visa-mockup.png",
-    title: "Wiser Consulting Website (MERN)",
+    title: "Wiser Consulting Website (MERN & Next.js)",
     client: "Global visa assistance, documentation, and user-friendly portal",
     slug: "https://wiserconsulting.info/",
+  },
+  {
+    image: "/images/work/wiser-consulting-software.png",
+    title: "Tech Wiser Consulting Software House (MERN & Next.js)",
+    client: "A professional software development house specializing in robust web systems and custom enterprise solutions. We leverage MERN and Next.js to automate business processes and drive digital growth.",
+    slug: "https://tech.wiserconsulting.info/",
   },
 ];
 
