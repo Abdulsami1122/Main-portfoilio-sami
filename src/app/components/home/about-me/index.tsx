@@ -35,7 +35,7 @@ const AboutMe = () => {
                   {[
                     { count: "01", label: t("about.stats.years") },
                     { count: "4+", label: t("about.stats.clients") },
-                    { count: "5", label: t("about.stats.projects") },
+                    { count: "5+", label: t("about.stats.projects") },
                   ].map((item, i) => (
                     <div key={i}>
                       <h3>{item.count}</h3>
