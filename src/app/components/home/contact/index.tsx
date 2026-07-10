@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import emailjs from '@emailjs/browser';
+import HeatCanvas from "./HeatCanvas";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -185,9 +186,10 @@ const Contact = () => {
                   variant="outline"
                   type="submit"
                   disabled={isSubmitting}
-                  className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group disabled:opacity-50"
+                  className="relative overflow-hidden cursor-pointer w-fit h-full py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-white/20 hover:border-orange-500/50 rounded-full group disabled:opacity-50 transition-all duration-500 bg-[#0c0908]"
                 >
-                  <span className="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">
+                  <HeatCanvas />
+                  <span className="relative z-10 text-xl font-medium text-white transition-colors duration-300">
                     {isSubmitting ? "Sending..." : t("contact.send")}
                   </span>
                 </Button>
