@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import GrassCanvas from "./GrassCanvas";
+import RippleCanvas from "./RippleCanvas";
 
 import { useLanguage } from "@/app/context/LanguageContext";
 
@@ -172,7 +172,7 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
                   onClick={handleOpen}
                   className="group relative h-16 px-10 overflow-hidden bg-white/5 border border-white/10 hover:border-white/30 text-white rounded-full transition-all duration-500 uppercase tracking-[0.15em] text-sm backdrop-blur-md"
                 >
-                  <GrassCanvas />
+                  <RippleCanvas />
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out z-0" />
                   <span className="relative z-10 flex items-center gap-3">
                     {t("welcome.open")}
