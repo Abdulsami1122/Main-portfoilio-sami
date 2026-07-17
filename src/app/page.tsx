@@ -10,6 +10,7 @@ import LatestWork from "./components/home/latest-work"
 import DoorOverlay from "./components/home/door-overlay";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
+import { CursorSnake } from "@/components/cursor-snake";
 
 const page = () => {
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
@@ -30,6 +31,7 @@ const page = () => {
           window.scrollTo(0, 0);
         }}
       />
+      {!isPortfolioOpen && <CursorSnake />}
       <main
         className={`transition-opacity duration-700 ease-out ${isPortfolioOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
