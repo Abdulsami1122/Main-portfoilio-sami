@@ -7,7 +7,7 @@ const AboutMe = () => {
 
   return (
     <section>
-      <div className="relative bg-muted py-10 md:py-32">
+      <div className="relative bg-muted py-10 md:py-16">
         <div className="relative z-10">
           <div className="container">
             <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7">
@@ -15,7 +15,7 @@ const AboutMe = () => {
               <p className="text-xl text-primary">( 01 )</p>
             </div>
 
-            <div className="pt-10 xl:pt-16 flex flex-col lg:flex-row gap-10 items-center justify-between">
+            <div className="pt-8 xl:pt-10 flex flex-col lg:flex-row gap-10 items-center justify-between">
               <div className="w-[303px] h-[440px] hidden lg:flex">
                 <Image
                   src="/images/home/about-me/about-banner-img.svg"
@@ -31,7 +31,7 @@ const AboutMe = () => {
                   {t("about.desc")}
                 </p>
 
-                <div className="grid grid-cols-3 py-10 xl:py-16 gap-5 border-b border-gray-300">
+                <div className="grid grid-cols-3 py-6 xl:py-10 gap-5 border-b border-gray-300">
                   {[
                     { count: "01", label: t("about.stats.years") },
                     { count: "4+", label: t("about.stats.clients") },
@@ -46,7 +46,7 @@ const AboutMe = () => {
                   ))}
                 </div>
 
-                <div className="pt-8 xl:pt-14 flex flex-col sm:flex-row items-center gap-4">
+                <div className="pt-6 xl:pt-8 flex flex-col sm:flex-row items-center gap-4">
                   <div className="flex items-center gap-3.5">
                     <Image
                       src="/images/icon/lang-icon.svg"

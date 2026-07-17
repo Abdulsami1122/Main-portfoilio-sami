@@ -49,8 +49,8 @@ const EducationSkills = () => {
       <div className="border-t border-muted overflow-hidden">
         <div className="container relative z-10">
 
-          <div className="relative z-10 py-16 md:py-32">
-            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 xl:mb-16">
+          <div className="relative z-10 py-12 md:py-18">
+            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-6 xl:mb-10">
               <h2>{t("skills.title")}</h2>
               <p className="text-xl text-primary">
                 ( {String(

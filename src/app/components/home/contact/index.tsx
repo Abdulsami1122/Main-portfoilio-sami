@@ -99,14 +99,14 @@ const Contact = () => {
   return (
     <section className="no-print">
       <div className="container">
-        <div className="pt-16 md:pt-32 pb-20">
-          <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
+        <div className="pt-12 md:pt-18 pb-14 md:pb-16">
+          <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-4 mb-6 md:mb-10">
             <h2>{t("contact.title")}</h2>
             <p className="text-xl text-primary">( 05 )</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-7 sm:gap-12">
+              <div className="flex flex-col gap-6 sm:gap-8">
                 <div className="grid grid-cols-2 gap-8">
                   <div>
                     <Label htmlFor="name" className="label">

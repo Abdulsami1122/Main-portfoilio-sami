@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="py-6 sm:py-14 flex items-center justify-center">
+    <footer className="py-4 sm:py-8 flex items-center justify-center">
       <div className="container">
         <div className="flex flex-col gap-1.5 items-center sm:items-start">
           <div className="relative flex items-center w-full">

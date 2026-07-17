@@ -27,14 +27,14 @@ const LatestWork = () => {
     <section>
       <div className="bg-muted">
         <div className="container">
-          <div className="py-16 xl:py-32 ">
-            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-9 md:mb-16">
+          <div className="py-12 xl:py-18 ">
+            <div className="flex items-center justify-between gap-2 border-b border-foreground/30 pb-7 mb-6 md:mb-10">
               <h2>{t("work.title")}</h2>
               <p className="text-xl text-primary">
                 ( {String(workData?.length || 0).padStart(2, "0")} )
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 xl:gap-y-8">
               {workData?.map((value: any, index: any) => {
                 return (
                   <div
