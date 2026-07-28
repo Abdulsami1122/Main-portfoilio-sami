@@ -170,21 +170,21 @@ export const CursorSnake: React.FC = () => {
 
       // Theme-based setup
       const isDark = resolvedTheme === "dark" || document.documentElement.classList.contains("dark");
-      
+
       // Color palette for the snake segments (RGB interpolations)
       // Light Mode: Emerald Green to Royal Blue
       // Dark Mode: Emerald Green to Vibrant Cyan to Indigo Glow
-      const colors = isDark 
+      const colors = isDark
         ? [
-            { r: 16, g: 185, b: 129 }, // Emerald Green
-            { r: 6, g: 182, b: 212 },  // Cyan
-            { r: 99, g: 102, b: 241 }  // Indigo
-          ]
+          { r: 16, g: 185, b: 129 }, // Emerald Green
+          { r: 6, g: 182, b: 212 },  // Cyan
+          { r: 99, g: 102, b: 241 }  // Indigo
+        ]
         : [
-            { r: 16, g: 185, b: 129 }, // Emerald Green
-            { r: 14, g: 165, b: 233 }, // Sky Blue
-            { r: 59, g: 130, b: 246 }  // Royal Blue
-          ];
+          { r: 16, g: 185, b: 129 }, // Emerald Green
+          { r: 14, g: 165, b: 233 }, // Sky Blue
+          { r: 59, g: 130, b: 246 }  // Royal Blue
+        ];
 
       const getSegmentColor = (index: number, total: number) => {
         const pct = index / (total - 1);
@@ -246,7 +246,7 @@ export const CursorSnake: React.FC = () => {
         const tongueLength = 10 + Math.sin(timestamp * 0.05) * 3;
         const tongueX = points[0].x + Math.cos(angle) * (maxRadius + 1);
         const tongueY = points[0].y + Math.sin(angle) * (maxRadius + 1);
-        
+
         const tipX = points[0].x + Math.cos(angle) * (maxRadius + tongueLength);
         const tipY = points[0].y + Math.sin(angle) * (maxRadius + tongueLength);
 
@@ -280,7 +280,7 @@ export const CursorSnake: React.FC = () => {
 
       for (let i = points.length - 1; i >= 0; i--) {
         const pt = points[i];
-        
+
         // Taper radius
         const t = i / (points.length - 1);
         const radius = maxRadius * (1 - t * 0.7);
@@ -298,7 +298,7 @@ export const CursorSnake: React.FC = () => {
         ctx.fillStyle = getSegmentColor(i, points.length);
         ctx.fill();
 
-        // Subtle dark or light outline for 3D depth
+        // Subtle dark or lighht outline for 3D depth
         ctx.shadowBlur = 0; // turn off shadow for outline
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, radius, 0, Math.PI * 2);
@@ -311,7 +311,7 @@ export const CursorSnake: React.FC = () => {
       // Only draw if we have a direction reference from points[1]
       if (points.length > 1) {
         const head = points[0];
-        
+
         // Offset eyes perpendicular to direction
         const eyeAngleOffset = Math.PI / 3.2; // roughly 56 degrees to the side
 
@@ -325,7 +325,7 @@ export const CursorSnake: React.FC = () => {
         const eyeRadius = 2.2;
         ctx.shadowBlur = 0;
         ctx.fillStyle = "#ffffff";
-        
+
         ctx.beginPath();
         ctx.arc(leftEyeX, leftEyeY, eyeRadius, 0, Math.PI * 2);
         ctx.arc(rightEyeX, rightEyeY, eyeRadius, 0, Math.PI * 2);
@@ -336,7 +336,7 @@ export const CursorSnake: React.FC = () => {
         const toMouseX = mouse.x - head.x;
         const toMouseY = mouse.y - head.y;
         const distToMouse = Math.max(1, Math.sqrt(toMouseX * toMouseX + toMouseY * toMouseY));
-        
+
         // Pupil displacement offset
         const dispLimit = 0.6;
         const dispX = (toMouseX / distToMouse) * dispLimit;
