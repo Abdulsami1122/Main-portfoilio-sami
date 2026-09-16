@@ -42,10 +42,10 @@ const HeroSection = () => {
               {/* Profile Image container */}
               <div className="relative h-[270px] w-[270px] sm:h-[340px] sm:w-[340px] lg:h-[420px] lg:w-[420px] overflow-hidden shadow-2xl rounded-full border-4 border-white dark:border-gray-900 bg-muted/20">
                 <Image
-                  src={"/images/home/banner/Sami.jpeg"}
+                  src={"/images/home/banner/Sami-formal.jpeg"}
                   alt="Abdul Sami"
                   fill
-                  className="object-cover object-[center_30%] scale-[1.15]"
+                  className="object-cover object-top scale-[1.06]"
                   priority
                 />
               </div>

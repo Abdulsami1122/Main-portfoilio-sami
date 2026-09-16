@@ -142,10 +142,10 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
               <motion.div variants={textVariants} className="md:hidden flex flex-col items-center justify-center">
                 <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl bg-muted/20">
                   <Image
-                    src="/images/home/banner/Sami.jpeg"
+                    src="/images/home/banner/Sami-formal.jpeg"
                     alt="Abdul Sami"
                     fill
-                    className="object-cover object-[center_30%] scale-[1.15]"
+                    className="object-cover object-top scale-[1.06]"
                     priority
                   />
                 </div>

@@ -33,9 +33,9 @@ const AboutMe = () => {
 
                 <div className="grid grid-cols-3 py-6 xl:py-10 gap-5 border-b border-gray-300">
                   {[
-                    { count: "01", label: t("about.stats.years") },
+                    { count: "2+", label: t("about.stats.years") },
                     { count: "4+", label: t("about.stats.clients") },
-                    { count: "5+", label: t("about.stats.projects") },
+                    { count: "10+", label: t("about.stats.projects") },
                   ].map((item, i) => (
                     <div key={i}>
                       <h3>{item.count}</h3>
