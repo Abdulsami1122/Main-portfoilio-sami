@@ -10,6 +10,32 @@ export function ChatWidget() {
   const { messages, isLoading, error, sendMessage } = useChat();
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousBodyOverscroll = document.body.style.overscrollBehavior;
+    const previousRootOverflow = document.documentElement.style.overflow;
+    const previousRootOverscroll = document.documentElement.style.overscrollBehavior;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    document.body.style.overscrollBehavior = 'none';
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.overscrollBehavior = 'none';
+    document.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.overscrollBehavior = previousBodyOverscroll;
+      document.documentElement.style.overflow = previousRootOverflow;
+      document.documentElement.style.overscrollBehavior = previousRootOverscroll;
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isOpen]);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -39,9 +65,17 @@ export function ChatWidget() {
         </button>
       )}
 
-      {/* Chaat Modal */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-96 max-w-lg h-[70vh] sm:h-[600px] max-h-[90vh] bg-white dark:bg-gray-900 rounded-xl sm:rounded-lg shadow-2xl flex flex-col border border-gray-200 dark:border-gray-700">
+        <button
+          type="button"
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 z-40 cursor-default bg-black/20"
+          aria-label="Close chat"
+        />
+      )}
+
+      {isOpen && (
+        <div role="dialog" aria-modal="true" aria-label="Chat with AI" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-96 max-w-lg h-[70vh] sm:h-[600px] max-h-[90vh] bg-white dark:bg-gray-900 rounded-xl sm:rounded-lg shadow-2xl flex flex-col border border-gray-200 dark:border-gray-700">
           {/* Header */}
           <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-xl sm:rounded-t-lg flex-shrink-0">
             <div className="min-w-0">
@@ -64,9 +98,9 @@ export function ChatWidget() {
               <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3 sm:p-4 text-sm">
                 <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">⚙️ Setup Required</h4>
                 <ol className="space-y-2 text-blue-800 dark:text-blue-200 list-decimal list-inside text-xs sm:text-sm">
-                  <li>Get a free API key from <a href="https://console.groq.com/" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-blue-600 dark:hover:text-blue-300">console.groq.com</a></li>
+                  <li>Get an API key from <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-blue-600 dark:hover:text-blue-300">Google AI Studio</a></li>
                   <li>Open <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">.env.local</code> in your project root</li>
-                  <li>Replace <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">your_groq_api_key_here</code> with your actual key</li>
+                  <li>Set <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">GEMINI_API_KEY</code> to your API key</li>
                   <li>Restart your dev server</li>
                 </ol>
               </div>
@@ -130,6 +164,7 @@ export function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
+                maxLength={4000}
                 disabled={isLoading}
                 className="flex-1 px-3 sm:px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 disabled:opacity-50 min-w-0"
               />
