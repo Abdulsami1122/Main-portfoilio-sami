@@ -66,7 +66,7 @@ export const PortfolioApp: React.FC = () => {
       />
 
       {/* 2. Main Content Container */}
-      <main className="flex-1 max-w-7xl mx-auto w-full px-3 sm:px-6 pt-24 sm:pt-28 pb-16">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-3 sm:px-6 pt-18 sm:pt-28 pb-16">
         {/* Tabbed View vs Continuous View */}
         {viewMode === "tabbed" ? (
           <AnimatePresence mode="wait">
