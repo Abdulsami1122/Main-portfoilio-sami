@@ -106,20 +106,20 @@ export const OverviewSection: React.FC<OverviewSectionProps> = ({
               {t("hero.desc")}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
               <button
                 onClick={handleDownloadCV}
-                className="px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl font-bold text-xs flex items-center gap-2 shadow-xs transition-transform active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto px-3 sm:px-6 py-2.5 sm:py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg sm:rounded-2xl font-bold text-xs flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs transition-transform active:scale-95 cursor-pointer"
               >
-                <Download className="w-4 h-4" />
-                <span>{t("resume.download")}</span>
+                <Download className="w-4 h-4 shrink-0" />
+                <span className="whitespace-nowrap">{t("resume.download")}</span>
               </button>
               <button
                 onClick={onNavigateToProjects}
-                className="px-6 py-3 bg-muted hover:bg-muted/80 text-foreground rounded-2xl font-semibold text-xs flex items-center gap-2 transition-transform active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto px-3 sm:px-6 py-2.5 sm:py-3 bg-muted hover:bg-muted/80 text-foreground border border-border sm:border-transparent rounded-lg sm:rounded-2xl font-semibold text-xs flex items-center justify-center gap-1.5 sm:gap-2 transition-transform active:scale-95 cursor-pointer"
               >
-                <span>View Projects</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">View Projects</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
             </div>
           </div>
