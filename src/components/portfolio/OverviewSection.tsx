@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { 
   Download, 
   ArrowRight, 
@@ -11,11 +10,7 @@ import {
   Layers, 
   Globe2, 
   Mail, 
-  Phone, 
-  Github, 
-  Linkedin,
-  Sparkles,
-  Zap
+  Sparkles
 } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 
@@ -34,9 +29,61 @@ export const OverviewSection: React.FC<OverviewSectionProps> = ({
     window.open("/images/resumedownload/Abdul-Sami-SE.pdf", "_blank");
   };
 
+  const renderStatsCards = () => (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+      {/* 2+ Years Card */}
+      <div className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-2">
+        <div className="flex items-center justify-between text-muted-foreground">
+          <span className="text-xs font-semibold">{t("about.stats.years")}</span>
+          <div className="p-2 rounded-xl bg-primary/10 text-primary">
+            <Briefcase className="w-4 h-4" />
+          </div>
+        </div>
+        <div className="text-3xl sm:text-4xl font-black text-foreground">
+          2+ Years
+        </div>
+        <p className="text-xs text-muted-foreground">
+          Building production web apps & POS accounting engines.
+        </p>
+      </div>
+
+      {/* 10+ Projects Card */}
+      <div className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-2">
+        <div className="flex items-center justify-between text-muted-foreground">
+          <span className="text-xs font-semibold">{t("about.stats.projects")}</span>
+          <div className="p-2 rounded-xl bg-primary/10 text-primary">
+            <Layers className="w-4 h-4" />
+          </div>
+        </div>
+        <div className="text-3xl sm:text-4xl font-black text-foreground">
+          10+ Projects
+        </div>
+        <p className="text-xs text-muted-foreground">
+          Full-stack systems, e-commerce, and enterprise portals.
+        </p>
+      </div>
+
+      {/* 4+ Clients Card */}
+      <div className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs space-y-2">
+        <div className="flex items-center justify-between text-muted-foreground">
+          <span className="text-xs font-semibold">{t("about.stats.clients")}</span>
+          <div className="p-2 rounded-xl bg-primary/10 text-primary">
+            <Users className="w-4 h-4" />
+          </div>
+        </div>
+        <div className="text-3xl sm:text-4xl font-black text-foreground">
+          4+ Clients
+        </div>
+        <p className="text-xs text-muted-foreground">
+          International clients and businesses served globally.
+        </p>
+      </div>
+    </div>
+  );
+
   return (
-    <section className="space-y-8">
-      {/* Hero Card */}
+    <section className="space-y-6 sm:space-y-8">
+      {/* 1. Hero Card */}
       <div className="relative overflow-hidden rounded-3xl bg-card border border-border p-6 sm:p-10 lg:p-12 shadow-sm">
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Text */}
@@ -92,80 +139,44 @@ export const OverviewSection: React.FC<OverviewSectionProps> = ({
         </div>
       </div>
 
-      {/* Stats Cards Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-card border border-border rounded-2xl p-6 shadow-xs space-y-2">
-          <div className="flex items-center justify-between text-muted-foreground">
-            <span className="text-xs font-semibold">{t("about.stats.years")}</span>
-            <div className="p-2 rounded-xl bg-primary/10 text-primary">
-              <Briefcase className="w-4 h-4" />
-            </div>
-          </div>
-          <div className="text-3xl sm:text-4xl font-black text-foreground">
-            2+ Years
-          </div>
-          <p className="text-xs text-muted-foreground">
-            Building production web apps & POS accounting engines.
-          </p>
-        </div>
-
-        <div className="bg-card border border-border rounded-2xl p-6 shadow-xs space-y-2">
-          <div className="flex items-center justify-between text-muted-foreground">
-            <span className="text-xs font-semibold">{t("about.stats.projects")}</span>
-            <div className="p-2 rounded-xl bg-primary/10 text-primary">
-              <Layers className="w-4 h-4" />
-            </div>
-          </div>
-          <div className="text-3xl sm:text-4xl font-black text-foreground">
-            10+ Projects
-          </div>
-          <p className="text-xs text-muted-foreground">
-            Full-stack systems, e-commerce, and enterprise portals.
-          </p>
-        </div>
-
-        <div className="bg-card border border-border rounded-2xl p-6 shadow-xs space-y-2">
-          <div className="flex items-center justify-between text-muted-foreground">
-            <span className="text-xs font-semibold">{t("about.stats.clients")}</span>
-            <div className="p-2 rounded-xl bg-primary/10 text-primary">
-              <Users className="w-4 h-4" />
-            </div>
-          </div>
-          <div className="text-3xl sm:text-4xl font-black text-foreground">
-            4+ Clients
-          </div>
-          <p className="text-xs text-muted-foreground">
-            International clients and businesses served globally.
-          </p>
-        </div>
+      {/* 2. Stats Cards Row (Desktop / Tablet ONLY: hidden on mobile) */}
+      <div className="hidden sm:block">
+        {renderStatsCards()}
       </div>
 
-      {/* About Me & Spoken Languages */}
+      {/* 3. About Me & Spoken Languages */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* About Bio */}
-        <div className="lg:col-span-8 bg-card border border-border rounded-3xl p-6 sm:p-8 shadow-xs space-y-4">
-          <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-primary" />
-            <span>{t("about.title")}</span>
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {t("about.desc")}
-          </p>
+        {/* About Bio Column */}
+        <div className="lg:col-span-8 space-y-6">
+          <div className="bg-card border border-border rounded-3xl p-6 sm:p-8 shadow-xs space-y-4">
+            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary" />
+              <span>{t("about.title")}</span>
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {t("about.desc")}
+            </p>
 
-          <div className="pt-2 flex flex-wrap gap-2 text-xs">
-            <span className="font-semibold text-foreground mr-1 self-center">Specializations:</span>
-            <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
-              Double-Entry Accounting POS
-            </span>
-            <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
-              E-Commerce Stores
-            </span>
-            <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
-              Linux Server Deployments
-            </span>
-            <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
-              Next.js 15 Full-Stack
-            </span>
+            <div className="pt-2 flex flex-wrap gap-2 text-xs">
+              <span className="font-semibold text-foreground mr-1 self-center">Specializations:</span>
+              <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
+                Double-Entry Accounting POS
+              </span>
+              <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
+                E-Commerce Stores
+              </span>
+              <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
+                Linux Server Deployments
+              </span>
+              <span className="px-3 py-1 rounded-lg bg-muted text-foreground font-medium">
+                Next.js 15 Full-Stack
+              </span>
+            </div>
+          </div>
+
+          {/* Stats Cards Row (Mobile ONLY: shown right after About Me on mobile screens!) */}
+          <div className="block sm:hidden">
+            {renderStatsCards()}
           </div>
         </div>
 

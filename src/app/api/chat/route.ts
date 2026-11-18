@@ -257,7 +257,7 @@ export async function POST(request: NextRequest) {
     const modelName = resolveEnvModel();
 
     try {
-      const ai = new GoogleGenAI({ 
+      const ai = new GoogleGenAI({
         apiKey,
         httpOptions: { timeout: 12000 }
       });

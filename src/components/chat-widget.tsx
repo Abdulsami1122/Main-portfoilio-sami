@@ -53,10 +53,10 @@ export function ChatWidget() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div 
-          role="dialog" 
-          aria-modal="true" 
-          aria-label="Chat with AI" 
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Chat with AI"
           className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-96 max-w-lg h-[75vh] sm:h-[580px] max-h-[90vh] bg-background text-foreground rounded-2xl shadow-2xl flex flex-col border border-border overflow-hidden"
         >
           {/* Header */}
@@ -105,15 +105,13 @@ export function ChatWidget() {
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[85%] sm:max-w-[80%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm shadow-2xs ${
-                    msg.role === 'user'
-                      ? 'bg-blue-600 text-white rounded-br-xs'
-                      : 'bg-card border border-border text-foreground rounded-bl-xs'
-                  }`}
+                  className={`max-w-[85%] sm:max-w-[80%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm shadow-2xs ${msg.role === 'user'
+                    ? 'bg-blue-600 text-white rounded-br-xs'
+                    : 'bg-card border border-border text-foreground rounded-bl-xs'
+                    }`}
                 >
-                  <p className={`break-words whitespace-pre-wrap leading-relaxed ${
-                    msg.role === 'user' ? '!text-white font-medium' : '!text-foreground'
-                  }`}>
+                  <p className={`break-words whitespace-pre-wrap leading-relaxed ${msg.role === 'user' ? '!text-white font-medium' : '!text-foreground'
+                    }`}>
                     {msg.content}
                   </p>
                 </div>
