@@ -152,13 +152,17 @@ const DoorOverlay = ({ onOpen }: { onOpen: () => void }) => {
               </motion.div>
 
               <motion.div variants={textVariants} className="overflow-hidden py-2">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-medium tracking-wide mb-3">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Full-Stack Developer • MERN & PERN Stack</span>
+                </div>
                 <h1 
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight uppercase leading-tight" 
                   style={{ textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}
                 >
                   {t("welcome.title")}
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-white to-emerald-400">
                     {t("welcome.portfolio")}
                   </span>
                 </h1>

@@ -34,6 +34,14 @@ button.no-overlay::before {
   display: none !important;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .wave {
   animation-name: wave-animation;
   animation-duration: 2.5s;
