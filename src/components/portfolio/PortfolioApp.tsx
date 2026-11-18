@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "./Navbar";
 import { OverviewSection } from "./OverviewSection";
@@ -15,17 +15,49 @@ export const PortfolioApp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<SectionTab>("overview");
   const [viewMode, setViewMode] = useState<"tabbed" | "continuous">("tabbed");
 
-  const handleSelectTab = (tab: SectionTab) => {
-    setActiveTab(tab);
-    if (viewMode === "continuous") {
-      const el = document.getElementById(`section-${tab}`);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (tab: SectionTab) => {
+    const el = document.getElementById(`section-${tab}`);
+    if (el) {
+      const yOffset = -100;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
+  const handleSelectTab = (tab: SectionTab) => {
+    setActiveTab(tab);
+    if (viewMode === "continuous") {
+      scrollToSection(tab);
+    }
+  };
+
+  // Track active section on scroll in continuous mode
+  useEffect(() => {
+    if (viewMode !== "continuous") return;
+
+    const sections: SectionTab[] = ["overview", "projects", "skills", "experience", "contact"];
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 160;
+      for (const section of sections) {
+        const el = document.getElementById(`section-${section}`);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveTab(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [viewMode]);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans transition-colors selection:bg-primary/20 flex flex-col">
-      {/* 1. Modern Top Navbar with Navigation Tabs */}
+      {/* 1. Modern Top Navbar with Navigation Tabs & View All Toggle */}
       <Navbar
         activeTab={activeTab}
         onSelectTab={handleSelectTab}
@@ -61,14 +93,8 @@ export const PortfolioApp: React.FC = () => {
           <div className="space-y-16">
             <div id="section-overview">
               <OverviewSection
-                onNavigateToProjects={() => {
-                  const el = document.getElementById("section-projects");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
-                onNavigateToContact={() => {
-                  const el = document.getElementById("section-contact");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
+                onNavigateToProjects={() => scrollToSection("projects")}
+                onNavigateToContact={() => scrollToSection("contact")}
               />
             </div>
             <div className="border-t border-border" />
